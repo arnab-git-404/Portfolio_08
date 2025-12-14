@@ -1,15 +1,24 @@
-
 "use client";
 
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+  Github,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useInView } from "react-intersection-observer";
 import { Textarea } from "@/components/ui/textarea";
 import toast, { Toaster } from "react-hot-toast";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "@emailjs/browser";
+
 
 export default function Contact() {
   const recaptchaRef = useRef<ReCAPTCHA | null>(null);
@@ -20,7 +29,7 @@ export default function Contact() {
     subject: "",
     message: "",
   });
-  
+
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
@@ -28,9 +37,11 @@ export default function Contact() {
   const validate = () => {
     const newErrors: Record<string, string> = {};
     if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) newErrors.email = "Valid email is required";
+    if (!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/))
+      newErrors.email = "Valid email is required";
     if (!formData.subject.trim()) newErrors.subject = "Subject is required";
-    if (formData.message.trim().length < 10) newErrors.message = "Message should be at least 10 characters";
+    if (formData.message.trim().length < 10)
+      newErrors.message = "Message should be at least 10 characters";
     if (!recaptchaToken) newErrors.recaptcha = "Please complete reCAPTCHA";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -70,20 +81,29 @@ export default function Contact() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setErrors((prev) => ({ ...prev, [e.target.name]: "" }));
   };
 
+  const [ref, inView] = useInView({
+  triggerOnce: true,
+  threshold: 0.1,
+});
+
   return (
     <section id="contact" className="py-20 relative">
-      <Toaster position="top-right" />
+      {/* <Toaster position="top-right" /> */}
       <div className="container max-w-7xl mx-auto px-4">
+        
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5 }}
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6 }}
+                    className="max-w-4xl mx-auto"
         >
           {/* Section heading */}
           <div className="text-center mb-12">
@@ -92,7 +112,8 @@ export default function Contact() {
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Have a project in mind or want to collaborate? Feel free to reach out!
+              Have a project in mind or want to collaborate? Feel free to reach
+              out!
             </p>
           </div>
 
@@ -113,7 +134,9 @@ export default function Contact() {
                       <Mail className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground mb-1">Email</p>
+                      <p className="text-sm text-muted-foreground mb-1">
+                        Email
+                      </p>
                       <a
                         href="mailto:your.email@example.com"
                         className="font-medium hover:text-primary transition-smooth"
@@ -128,7 +151,9 @@ export default function Contact() {
                       <Phone className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground mb-1">Phone</p>
+                      <p className="text-sm text-muted-foreground mb-1">
+                        Phone
+                      </p>
                       <a
                         href="tel:+1234567890"
                         className="font-medium hover:text-primary transition-smooth"
@@ -143,7 +168,9 @@ export default function Contact() {
                       <MapPin className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground mb-1">Location</p>
+                      <p className="text-sm text-muted-foreground mb-1">
+                        Location
+                      </p>
                       <p className="font-medium">Your City, Country</p>
                     </div>
                   </div>
@@ -191,7 +218,10 @@ export default function Contact() {
             >
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Name
                   </label>
                   <Input
@@ -203,11 +233,16 @@ export default function Contact() {
                     placeholder="Your name"
                     disabled={loading}
                   />
-                  {errors.name && <p className="text-sm text-red-500 mt-1">{errors.name}</p>}
+                  {errors.name && (
+                    <p className="text-sm text-red-500 mt-1">{errors.name}</p>
+                  )}
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Email
                   </label>
                   <Input
@@ -220,11 +255,16 @@ export default function Contact() {
                     placeholder="your.email@example.com"
                     disabled={loading}
                   />
-                  {errors.email && <p className="text-sm text-red-500 mt-1">{errors.email}</p>}
+                  {errors.email && (
+                    <p className="text-sm text-red-500 mt-1">{errors.email}</p>
+                  )}
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Subject
                   </label>
                   <Input
@@ -236,11 +276,18 @@ export default function Contact() {
                     placeholder="What's this about?"
                     disabled={loading}
                   />
-                  {errors.subject && <p className="text-sm text-red-500 mt-1">{errors.subject}</p>}
+                  {errors.subject && (
+                    <p className="text-sm text-red-500 mt-1">
+                      {errors.subject}
+                    </p>
+                  )}
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Message
                   </label>
                   <Textarea
@@ -253,7 +300,11 @@ export default function Contact() {
                     rows={6}
                     disabled={loading}
                   />
-                  {errors.message && <p className="text-sm text-red-500 mt-1">{errors.message}</p>}
+                  {errors.message && (
+                    <p className="text-sm text-red-500 mt-1">
+                      {errors.message}
+                    </p>
+                  )}
                 </div>
 
                 {/* <div>
@@ -269,7 +320,12 @@ export default function Contact() {
                   {errors.recaptcha && <p className="text-sm text-red-500 mt-1">{errors.recaptcha}</p>}
                 </div> */}
 
-                <Button type="submit" className="hover:cursor-pointer w-full" size="lg" disabled={loading}>
+                <Button
+                  type="submit"
+                  className="hover:cursor-pointer w-full"
+                  size="lg"
+                  disabled={loading}
+                >
                   <Send className="w-4 h-4 mr-2" />
                   {loading ? "Sending..." : "Send Message"}
                 </Button>
