@@ -800,7 +800,7 @@ function ProjectCard({ project }: { project: any }) {
           {/* Image indicators */}
           {images.length > 1 && (
             <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1 z-10">
-              {images.map((_, idx) => (
+              {images.map((img:any, idx:any) => (
                 <div
                   key={idx}
                   className={`w-1.5 h-1.5 rounded-full transition-colors ${
