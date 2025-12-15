@@ -72,7 +72,7 @@ export default function Education() {
 
                     {/* Achievements */}
                     <div className="space-y-2">
-                      {edu.achievements.map((achievement, i) => (
+                      {edu?.achievements.map((achievement, i) => (
                         <div key={i} className="flex items-start gap-2">
                           <span className="text-primary">*</span>
                           <p className="text-sm text-muted-foreground">{achievement}</p>

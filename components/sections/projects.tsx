@@ -815,7 +815,7 @@ function ProjectCard({ project }: { project: any }) {
         <div className="p-6 flex-1 flex flex-col">
           <div className="flex justify-between items-start mb-2">
             <h3 className="text-xl font-bold line-clamp-1">{project.title}</h3>
-            <span className="px-2 py-1 text-xs rounded bg-muted/50 border capitalize text-muted-foreground">
+            <span className="px-2 py-1 text-xs rounded-md bg-muted/50 border capitalize text-muted-foreground">
               {project.category}
             </span>
           </div>
@@ -828,16 +828,16 @@ function ProjectCard({ project }: { project: any }) {
             {project.technologies.slice(0, 4).map((tech: string, i: number) => (
               <span
                 key={i}
-                className="px-2 py-1 text-xs rounded bg-primary/10 border border-primary/30 text-primary"
+                className="px-2 py-1 text-xs rounded-md bg-primary/10 border border-primary/30 text-primary"
               >
                 {tech}
               </span>
             ))}
-            {project.technologies.length > 4 && (
+            {/* {project.technologies.length > 4 && (
               <span className="text-xs text-muted-foreground">
                 +{project.technologies.length - 4} more
               </span>
-            )}
+            )} */}
           </div>
 
           <div className="flex gap-3 pt-4 border-t">

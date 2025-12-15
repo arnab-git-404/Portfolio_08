@@ -72,7 +72,7 @@
     "id": "4",
     "title": "Heritage Repository",
     "description": "Heritage Repository is a fullstack web application designed to safeguard living heritage through ethical documentation and tiered access control. The platform enables communities to document, verify, and share Folk Songs, Folk Dances, Folk Tales, Rituals, Material Culture.",
-    "technologies": ["React", "Node.js", "nodemailer", "MongoDB", "Express"],
+    "technologies": ["React", "Node.js", "Shadcn UI", "nodemailer", "MongoDB", "Express"],
     "images": [
       "/projects/heritage-repository/heritage-repository.jpg",
       "/projects/heritage-repository/heritage-repository1.jpg",
@@ -81,14 +81,14 @@
     ],
     "github": "https://github.com/arnab-git-404/heritage-repository",
     "live": "https://heritage-repository.vercel.app",
-    "category": "client",
+    "category": "production",
     "featured": true
   },
   {
     "id": "5",
     "title": "Diet Plans",
     "description": "A web application developed for Shoppurezen that enables administrators to create and manage customizable diet plans. Features admin controls for adding and deleting plans, with intelligent user data collection during downloads to support personalized health-based sales strategies.",
-    "technologies": ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
+    "technologies": ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS","Shadcn UI"],
     "images": [
       "/projects/dietplans/dietplans.jpg",
       "/projects/dietplans/dietplans1.jpg",
@@ -98,7 +98,7 @@
     "github": "https://github.com/arnab-git-404/diet-plans",
     "production": "https://dietplans.shoppurezen.com",
     "live": "",
-    "category": "client",
+    "category": "production",
     "featured": true
   },
   {
@@ -132,7 +132,7 @@
     "github": "https://github.com/arnab-git-404/Lagum-Advisors",
     "production": "https://www.lagumadvisors.com/",
     "live": "",
-    "category": "client",
+    "category": "production",
     "featured": true
   },
   {

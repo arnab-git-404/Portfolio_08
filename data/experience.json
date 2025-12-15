@@ -1,37 +1,35 @@
-
-
 [
   {
     "id": 1,
     "type": "internship",
-    "role": "Full Stack Developer Intern",
-    "company": "Tech Company Inc.",
+    "role": "Junior Software Developer",
+    "company": "Aam Pannaa Creations",
     "location": "Remote",
-    "duration": "Jan 2024 - Present",
+    "duration": "July 2025 - Present",
+    "promotions": [
+      {
+        "from": "Intern",
+        "to": "Junior Software Developer",
+        "date": "December 2025",
+        "reason": ""
+      }
+    ],
     "description": "Developing and maintaining web applications using MERN stack, collaborating with cross-functional teams to deliver high-quality products.",
-    "technologies": ["React", "Node.js", "MongoDB", "Express.js", "TypeScript", "Tailwind CSS"],
+    "technologies": [
+      "Next.js",
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Express.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
     "achievements": [
       "Built 5+ production-ready web applications",
       "Reduced page load time by 40% through optimization",
       "Implemented responsive designs across all projects"
     ],
-    "projects": [
-      {
-        "name": "E-Commerce Platform",
-        "description": "Full-featured online shopping platform with payment integration",
-        "url": "https://example.com"
-      },
-      {
-        "name": "Social Media Dashboard",
-        "description": "Analytics dashboard for social media management",
-        "url": "https://example.com"
-      },
-      {
-        "name": "Learning Management System",
-        "description": "Online education platform with course management",
-        "url": "https://example.com"
-      }
-    ]
+    "projects": []
   },
   {
     "id": 2,

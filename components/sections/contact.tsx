@@ -143,10 +143,10 @@ export default function Contact() {
                         Email
                       </p>
                       <a
-                        href="mailto:your.email@example.com"
+                        href="mailto:mukherjeearnab988@gmail.com"
                         className="font-medium hover:text-primary transition-smooth"
                       >
-                        your.email@example.com
+                        mukherjeearnab988@gmail.com
                       </a>
                     </div>
                   </div>
@@ -160,10 +160,10 @@ export default function Contact() {
                         Phone
                       </p>
                       <a
-                        href="tel:+1234567890"
+                        href="tel:+918637076499"
                         className="font-medium hover:text-primary transition-smooth"
                       >
-                        +1 (234) 567-890
+                        +91 86370 76499
                       </a>
                     </div>
                   </div>
@@ -176,7 +176,7 @@ export default function Contact() {
                       <p className="text-sm text-muted-foreground mb-1">
                         Location
                       </p>
-                      <p className="font-medium">Your City, Country</p>
+                      <p className="font-medium">Rampurhat, India</p>
                     </div>
                   </div>
                 </div>
@@ -187,7 +187,7 @@ export default function Contact() {
                 <h4 className="font-semibold mb-4">Follow Me</h4>
                 <div className="flex gap-3">
                   <a
-                    href="https://github.com/yourusername"
+                    href="https://github.com/arnab-git-404"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 border border-border rounded-lg hover:bg-primary/10 hover:border-primary transition-smooth"
@@ -195,7 +195,7 @@ export default function Contact() {
                     <Github className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://linkedin.com/in/yourusername"
+                    href="https://linkedin.com/in/0xarnab"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 border border-border rounded-lg hover:bg-primary/10 hover:border-primary transition-smooth"
@@ -203,7 +203,7 @@ export default function Contact() {
                     <Linkedin className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://twitter.com/yourusername"
+                    href="https://twitter.com/0x_arnab"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 border border-border rounded-lg hover:bg-primary/10 hover:border-primary transition-smooth"

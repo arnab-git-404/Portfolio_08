@@ -18,7 +18,7 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full">
         <FloatingLines
           enabledWaves={["top", "middle", "bottom"]}
           lineCount={5}
@@ -28,7 +28,7 @@ export default function Hero() {
           interactive={true}
           parallax={true}
         />
-      </div> */}
+      </div>
 
       <div className="container max-w-7xl mx-auto px-4 z-10 relative">
         <div className="max-w-4xl mx-auto text-center">
