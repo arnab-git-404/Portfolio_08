@@ -16,12 +16,11 @@ import { Input } from "@/components/ui/input";
 import { useInView } from "react-intersection-observer";
 import { Textarea } from "@/components/ui/textarea";
 import toast, { Toaster } from "react-hot-toast";
-import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "@emailjs/browser";
 
 
 export default function Contact() {
-  const recaptchaRef = useRef<ReCAPTCHA | null>(null);
+  const recaptchaRef = useRef(null);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -42,7 +41,7 @@ export default function Contact() {
     if (!formData.subject.trim()) newErrors.subject = "Subject is required";
     if (formData.message.trim().length < 10)
       newErrors.message = "Message should be at least 10 characters";
-    if (!recaptchaToken) newErrors.recaptcha = "Please complete reCAPTCHA";
+    
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -70,8 +69,6 @@ export default function Contact() {
 
       toast.success("Message sent! I'll get back to you soon.");
       setFormData({ name: "", email: "", subject: "", message: "" });
-      setRecaptchaToken(null);
-      recaptchaRef.current?.reset();
       setErrors({});
     } catch (err) {
       console.error(err);
