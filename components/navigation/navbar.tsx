@@ -409,7 +409,7 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.3 }}
         className={`
-          md:hidden fixed top-4 left-0 right-0 z-50
+          md:hidden fixed top-4 left-4 right-4 z-50
           transition-all duration-300
           ${
             scrolled
@@ -419,7 +419,7 @@ export default function Navbar() {
           border border-border/50 rounded-4xl
         `}
       >
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="px-4">
           <div className="flex items-center justify-between h-16">
             {/* Mobile Logo */}
             <motion.button
