@@ -474,7 +474,7 @@ export default function Experience() {
                                                 )}
 
                                                 {/* Projects worked on */}
-                                                {exp.projects && exp.projects.length > 0 && (
+                                                {/* {exp.projects && exp.projects.length > 0 && (
                                                     <div className="mt-6 pt-6 border-t border-border/50">
                                                         <p className="text-sm font-semibold text-foreground/80 mb-4">
                                                             Projects Worked On ({exp.projects.length}):
@@ -507,7 +507,7 @@ export default function Experience() {
                                                             ))}
                                                         </div>
                                                     </div>
-                                                )}
+                                                )} */}
                                             </div>
                                         </div>
                                     </motion.div>
